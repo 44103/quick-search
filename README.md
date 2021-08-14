@@ -1,21 +1,13 @@
-[日本語](./README.jp.md)
+English / [日本語](./README.jp.md)
 
-# Environment for Chrome Extension
+# Enhanced Search
 
 ## Introduction
-You can make environment for Chrome Extension quickly.
+You can access the tool panel early.
 
 ## Advance Preparation
 Install List
-- Docker
-- Docker Compose
+- Google Chrome
 
 ## Getting Started
-1. Crone this repository
-2. Build to a container
-   ```sh
-   docker-compose up -d
-   ```
-3. Enter in the container  
-   (e.g. Attach Visual Studio Code)
-1. Wait until dist directory is created
+1. Get it from [this](https://chrome.google.com/webstore/category/extensions)
