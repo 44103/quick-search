@@ -1,4 +1,4 @@
-import * as React from "react";
+import React, { Dispatch, SetStateAction } from "react";
 import "./Command.css"
 
 type Props = {
@@ -8,7 +8,7 @@ type Props = {
     text: string
   }[],
   value: string,
-  setValue: React.Dispatch<React.SetStateAction<string>>
+  setValue: Dispatch<SetStateAction<string>>
 };
 
 const Command = (props: Props) => {
