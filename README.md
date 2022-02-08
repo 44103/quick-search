@@ -1,6 +1,6 @@
 English / [日本語](./README.jp.md)
 
-# Enhanced Search
+# Quick Search
 
 ## Introduction
 You can access the tool panel early.

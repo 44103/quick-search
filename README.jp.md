@@ -1,5 +1,5 @@
 [English](./README.md) / 日本語
-# Enhanced Search
+# Quick Search
 
 ## 導入
 簡単にツールの機能を使えます。
