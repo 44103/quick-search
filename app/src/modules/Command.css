@@ -1,0 +1,40 @@
+div.cmd button {
+  background-color: rgb(20, 18, 18);
+  color: #777;
+  display: block;
+  padding: 10px;
+  cursor: pointer;
+  text-decoration: none;
+  border: 2px solid #000;
+  border-radius: 0;
+  width: 110px;
+  height: auto;
+  z-index: 999999;
+  text-align: left;
+  border: none;
+  outline: none;
+}
+
+div.cmd button:disabled,
+div.cmd button:hover {
+  background-color: #056926;
+  color: rgb(209, 209, 209);
+}
+
+div.cmd span {
+  height: 5px;
+  display: block;
+  width: 100%;
+}
+div.cmd {
+  box-shadow: rgb(51, 87, 76) 0px 1px 5px 0px;
+}
+div.cmd span.head {
+  height: 1.7em;
+  text-align: left;
+  display: block;
+  padding: 8px 0 0 6px;
+  color: #aaa;
+  font-weight: bold;
+  font-size: smaller;
+}
