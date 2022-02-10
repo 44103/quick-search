@@ -30,14 +30,39 @@ const initCommand = (regex: RegExp) => {
   res = texts.slice(1, -1).map(decodeURIComponent).filter((value) => {
     return regex.test(value);
   });
-  return res.length === 0 ? "" : res[0].replace(regex, "");
+  return res.length === 0 ? "" : res[0].replace(regex, "").replace(/,.*$/, "");
+}
+
+type Style = {
+  margin: string
+}
+
+type ConfData = {
+  position: string
 }
 
 const App = () => {
   const [query, _] = useState(initQuery);
   const [term, setTerm] = useState(initCommand(/^tbs=qdr:/));
   const [lang, setLang] = useState(initCommand(/^lr=/));
+  const [style, setStyle] = useState<Style>({ margin: "" });
   const init = useRef(true);
+
+  useEffect(() => {
+    const convertConftoStyle = (conf: ConfData) => {
+      return {
+        margin: conf.position === "left" ? "0 0 0 10px" : "0 10px 0 auto"
+      }
+    }
+    chrome.storage.sync.get("qs_conf", (items) => {
+      const conf = items.qs_conf as ConfData;
+      setStyle(convertConftoStyle(conf));
+    });
+    chrome.runtime.onMessage.addListener((request, _sender, _sendResponse) => {
+      const conf = request.qs_conf as ConfData;
+      setStyle(convertConftoStyle(conf));
+    })
+  }, []);
 
   useEffect(() => {
     if (init.current) { init.current = false; return; }
@@ -50,10 +75,10 @@ const App = () => {
   }, [term, lang]);
 
   return (
-    <div className="quick-search">
+    <div className="quick-search" style={style}>
       <Command head="Term" buttons={termList} value={term} setValue={setTerm} />
       <Command head="Language" buttons={langList} value={lang} setValue={setLang} />
-    </div >
+    </div>
   );
 };
 

@@ -21,6 +21,10 @@
     ],
     "persistent": false
   },
+  "permissions": [
+    "storage",
+    "tabs"
+  ],
   "content_scripts": [
     {
       "matches": [
