@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef, useLayoutEffect } from "react";
 import "./App.css";
 import Command from "./modules/Command"
 
@@ -48,10 +48,11 @@ const App = () => {
   const [style, setStyle] = useState<Style>({ margin: "" });
   const init = useRef(true);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     const convertConftoStyle = (conf: ConfData) => {
       return {
-        margin: conf.position === "left" ? "0 0 0 10px" : "0 10px 0 auto"
+        margin: conf.position === "left" ? "0 0 0 10px" : "0 10px 0 auto",
+        display: "block"
       }
     }
     chrome.storage.sync.get("qs_conf", (items) => {
