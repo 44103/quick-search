@@ -30,7 +30,7 @@ const initCommand = (regex: RegExp) => {
   res = texts.slice(1, -1).map(decodeURIComponent).filter((value) => {
     return regex.test(value);
   });
-  return res.length === 0 ? "" : res[0].replace(regex, "");
+  return res.length === 0 ? "" : res[0].replace(regex, "").replace(/,.?$/, "");
 }
 
 const App = () => {
@@ -53,7 +53,7 @@ const App = () => {
     <div className="quick-search">
       <Command head="Term" buttons={termList} value={term} setValue={setTerm} />
       <Command head="Language" buttons={langList} value={lang} setValue={setLang} />
-    </div >
+    </div>
   );
 };
 
