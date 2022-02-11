@@ -9,4 +9,5 @@ div.quick-search {
   margin: 0 10px 0 auto;
   display: block;
   background: rgb(43, 39, 39);
+  z-index: 999999;
 }
