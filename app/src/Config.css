@@ -1,0 +1,21 @@
+body {
+  background-color: rgb(43, 39, 39);
+  color: #ddd;
+}
+
+h3 {
+  width: 100%;
+}
+
+label ~ label {
+  margin-left: 15px;
+}
+
+label {
+  position: relative;
+  padding-left: 25px;
+}
+
+input {
+  margin-right: 8px;
+}

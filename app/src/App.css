@@ -7,7 +7,7 @@ div.quick-search {
   width: 110px;
   height: auto;
   margin: 0 10px 0 auto;
-  display: block;
   background: rgb(43, 39, 39);
   z-index: 999999;
+  display: none;
 }
