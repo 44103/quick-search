@@ -49,7 +49,8 @@ const App = () => {
   const init = useRef(true);
 
   useLayoutEffect(() => {
-    const convertConftoStyle = (conf: ConfData) => {
+    const convertConftoStyle = (conf: ConfData | undefined) => {
+      conf = conf ?? { position: "left" }
       return {
         margin: conf.position === "left" ? "0 0 0 10px" : "0 10px 0 auto",
         display: "block"
